@@ -1,0 +1,20 @@
+use("store")
+
+// db.inventory.find({ "item.description": "Single line description." })
+
+// Obtener los documentos que contienen line en su description
+// db.inventory.find({ "item.description": { $regex: /line/ } })
+
+// Obtener los documentos que contienen line(sin importar si es mayus o minus)
+// en su description
+// db.inventory.find({ "item.description": { $regex: /LINE/i } })
+
+// Obtener los documentos que contienen line al final de la descripcion
+// db.inventory.find({ "item.description": { $regex: /line$/i } })
+
+// Obtener los documentos que contienen single al inicio de la descripcion
+// db.inventory.find({ "item.description": { $regex: /^single/i } })
+
+// Obtener los documentos que contienen s al inicio de la descripcion en cada
+// uno de sus parrafos
+db.inventory.find({ "item.description": { $regex: /^s/im } })

@@ -1,0 +1,8 @@
+use("store")
+
+// Agregar elemento en un array interno del documento
+db.inventory.updateOne({_id: 4}, {
+  $push: {
+    tags: "headphone"
+  }
+})
